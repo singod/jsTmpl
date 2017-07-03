@@ -1,1 +1,2 @@
-website ( http://jstmpl.applinzi.com/ )
+jsTmpl - 模板与组件引擎
+==
