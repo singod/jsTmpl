@@ -8,5 +8,8 @@ jsTmpl 是一套用法极为简单，体积极为轻巧，功能极为明确的 
 * 当前版本：2.0.1
 * 网址：[jsTmpl 官网](http://jstmpl.applinzi.com/) <br>
 
-引擎介绍
+功能模块
 --
+* 模板功能：jsTmpl.template(elem, data);
+* 组件功能：jsTmpl.component(name, param);
+* 替换功能：jsTmpl.replace(name, param);
