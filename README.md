@@ -118,3 +118,28 @@ jsTmpl 是一套用法极为简单，体积极为轻巧，功能极为明确的 
     });
 </script>
 ```
+
+（三）替换功能：jsTmpl.`replace`(name, param);
+jsTmpl 还提供了一个超简单的基础型的组件功能，其用法和功能极为简单，就是“同名变量绑定同名属性的值”，其实就是做内容替换。
+* name : 组件名称。设置当前所定义的组件的名称 ( string 类型 )；
+* param : 参数集合。用来存储模板和数据 ( object 类型 )。
+
+#### 方法说明
+1. name 用来定义组件名称；
+2. param 中只有 template 属性；
+3. template 定义模板内容；
+4. template 定义的模板中，所绑定的变量就是 js-tmpl 标签中的相对应的属性；
+5. 所有数据变量必须用 {{ }} 分隔符包裹；
+6. 组件通过特殊标签 js-tmpl 引入，标签内部需要设置 type="replace" name="组件名称"。
+
+```html
+<js-tmpl type="replace" name="p" data-a="Tom" data-b="20"></js-tmpl>
+<js-tmpl type="replace" name="p" data-a="Peter" data-b="30"></js-tmpl>
+<js-tmpl type="replace" name="p" data-a="Frank" data-b="40"></js-tmpl>
+
+<script>
+    jsTmpl.replace("p", {
+        template: '<p><span>姓名：{{ data-a }}</span><b>年龄：{{ data-b }}</b></p>'
+    });
+</script>
+```
