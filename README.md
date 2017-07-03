@@ -11,6 +11,6 @@ jsTmpl 是一套用法极为简单，体积极为轻巧，功能极为明确的 
 
 功能模块
 --
-* 模板功能：jsTmpl.template(elem, data);
-* 组件功能：jsTmpl.component(name, param);
-* 替换功能：jsTmpl.replace(name, param);
+* 模板功能：jsTmpl.`template`(elem, data);
+* 组件功能：jsTmpl.`component`(name, param);
+* 替换功能：jsTmpl.`replace`(name, param);
