@@ -22,9 +22,9 @@ jsTmpl 是一套用法极为简单，体积极为轻巧，功能极为明确的 
 * data : 数据内容。用来存储所有数据，可为同一模板设置多组不同的数据 ( object 类型 )。
 
 #### 方法说明
-1. 目标元素必须包含 js-data 属性并赋值，用来标明此模板所引用的整体数据源（object 类型）；<br>
-2. 需要遍历循环的元素，必须在其父元素上添加 js-each 属性并赋值，用来标明此循环操作所引用的内部数据源（array 类型）；<br>
-3. 所有数据变量必须用 {{ }} 分隔符包裹。<br>
+1. 目标元素必须包含 js-data 属性并赋值，用来标明此模板所引用的整体数据源（object 类型）；
+2. 需要遍历循环的元素，必须在其父元素上添加 js-each 属性并赋值，用来标明此循环操作所引用的内部数据源（array 类型）；
+3. 所有数据变量必须用 {{ }} 分隔符包裹。
 
 ```html
 <section class="box" js-data="XXX">
@@ -83,3 +83,38 @@ jsTmpl 是一套用法极为简单，体积极为轻巧，功能极为明确的 
 7. template 定义的模板中，需要添加事件的元素，在其标签内部添加 js-event 属性，属性值与 event 参数中的属性相对应；
 8. 所有数据变量必须用 {{ }} 分隔符包裹；
 9. 组件通过特殊标签 js-tmpl 引入，标签内部需要设置 type="component" name="组件名称" data="数据源"。
+
+```html
+<js-tmpl type="component" name="artical" data="XXX"></js-tmpl>
+<js-tmpl type="component" name="artical" data="YYY"></js-tmpl>
+
+<script>
+    // 注意下面的 template 参数中模板结构的最外层是一个 <section> 标签
+    // 这就是上面说明中着重强调的 "外壳"
+    // 它可以没有任何实际意义，也可以是任何合法的 HTML 标签
+    // 但是它必须存在，用来包裹组件的全部结构，相当于组件全部结构的顶级祖先元素
+    
+    jsTmpl.component("artical", {
+        template: "<section><h1>{{ title }}</h1><h5 js-event='getHTML'>{{ time }}</h5><div>{{ content }}</div></section>",
+        data: {
+            XXX: {
+                title: "文章（一）",
+                time: "2017-01-01",
+                content: "这是第一篇文章"
+            },
+            YYY: {
+                title: "文章（二）",
+                time: "2017-02-02",
+                content: "这是第二篇文章"
+            }
+        },
+        event: {
+            getHTML: function () {
+                this.onclick = function () {
+                    console.log(this.innerHTML);
+                }
+            }
+        }
+    });
+</script>
+```
