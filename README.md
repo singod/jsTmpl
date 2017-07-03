@@ -17,7 +17,7 @@ jsTmpl 是一套用法极为简单，体积极为轻巧，功能极为明确的 
 
 使用方法
 --
-模板功能：jsTmpl.`template`(elem, data);
+（一）模板功能：jsTmpl.`template`(elem, data);
 * elem : 目标元素。模板所进行的所有数据操作都将发生在此目标元素的后代元素中 ( string 类型，且必须传入合法的 css 选择器 )；
 * data : 数据内容。用来存储所有数据，可为同一模板设置多组不同的数据 ( object 类型 )。
 ```Html
@@ -41,4 +41,27 @@ jsTmpl 是一套用法极为简单，体积极为轻巧，功能极为明确的 
         <li><b>{{ index }}</b><i></i><a href="{{ href }}">{{ link }}</a></li>
     </ul>
 </section>
+
+jsTmpl.template(".box", {
+    XXX: {
+        mainTitle: "主标题（一）",
+        subTitle: "副标题（一）",
+        set: [
+            { index: 1, href: "#1", link: "链接 (1)" },
+            { index: 2, href: "#2", link: "链接 (2)" },
+            { index: 3, href: "#3", link: "链接 (3)" },
+            { index: 4, href: "#4", link: "链接 (4)" }
+        ]
+    },
+    YYY: {
+        mainTitle: "主标题（二）",
+        subTitle: "副标题（二）",
+        set: [
+            { index: 5, href: "#5", link: "链接 (5)" },
+            { index: 6, href: "#6", link: "链接 (6)" },
+            { index: 7, href: "#7", link: "链接 (7)" },
+            { index: 8, href: "#8", link: "链接 (8)" }
+        ]
+    }
+});
 ```
