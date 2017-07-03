@@ -6,6 +6,6 @@ jsTmpl 是一套用法极为简单，体积极为轻巧，功能极为明确的 
 * 兼容情况：IE9+, Firefox3.6+, Safari6.0+, Chrome8.0+
 * 更新日期：2017-06-12
 * 当前版本：2.0.1
-* 网址：[jsTmpl 官网](http://jstmpl.applinzi.com/) 
+* 网址：[jsTmpl 官网](http://jstmpl.applinzi.com/) <br>
 引擎介绍
 --
