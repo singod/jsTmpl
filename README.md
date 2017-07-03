@@ -13,4 +13,10 @@ jsTmpl 是一套用法极为简单，体积极为轻巧，功能极为明确的 
 --
 * 模板功能：jsTmpl.`template`(elem, data);
 * 组件功能：jsTmpl.`component`(name, param);
-* 替换功能：jsTmpl.`replace`(name, param);
+* 替换功能：jsTmpl.`replace`(name, param); <br>
+
+使用方法
+--
+jsTmpl.`template`(elem, data);
+* elem : 目标元素。模板所进行的所有数据操作都将发生在此目标元素的后代元素中 ( string 类型，且必须传入合法的 css 选择器 )；
+* data : 数据内容。用来存储所有数据，可为同一模板设置多组不同的数据 ( object 类型 )。
